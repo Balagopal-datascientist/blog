@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "AI Models comparison"
+title:  "AI Models Comparison"
 date:   2025-02-28 17:52:32 +0530
 categories: data science
-tags: natural language processing, AI,Agents
+tags: natural language processing, AI, Agents
 ---
 # Advanced AI Models: A Comparison
 ## *Exploring Claude, Grok, DeepSeek, and OpenAI*
@@ -67,6 +67,7 @@ tags: natural language processing, AI,Agents
 - **Grok-1** — Initial release (late 2023)
 - **Grok-1.5** — Improved capabilities
 - **Grok-2** — Major advancement in reasoning
+- **Grok-3** — Enhanced data analysis capabilities, coding, research, and reasoning
 
 ### Grok's Distinguishing Features
 
@@ -74,6 +75,16 @@ tags: natural language processing, AI,Agents
 - 😄 **Rebellious personality**
 - 📊 **Data analysis capabilities**
 - 🧠 **Emphasis on "reasoning from first principles"**
+
+### Grok's Strengths
+
+| Area | Rating | Description |
+|------|--------|-------------|
+| Language | ⭐⭐⭐⭐ | Strong language understanding |
+| Reasoning | ⭐⭐⭐⭐⭐ | Emphasis on reasoning from first principles |
+| Coding | ⭐⭐⭐⭐⭐ | Excellent coding capabilities |
+| Safety | ⭐⭐⭐ | Focus on truth-seeking, less on safety |
+| Creativity | ⭐⭐⭐⭐⭐ | Highly creative and innovative |
 
 ### Use Cases
 
@@ -115,6 +126,16 @@ tags: natural language processing, AI,Agents
 * Code generation excellence
 * Research-oriented approach
 
+### DeepSeek's Strengths
+
+| Area | Rating | Description |
+|------|--------|-------------|
+| Language | ⭐⭐⭐⭐ | Strong language capabilities |
+| Reasoning | ⭐⭐⭐⭐⭐ | Excellent mathematical reasoning |
+| Coding | ⭐⭐⭐⭐⭐ | Specialized in code generation |
+| Safety | ⭐⭐⭐⭐ | Open research focus |
+| Creativity | ⭐⭐⭐ | Moderate creativity |
+
 ---
 
 ## OpenAI
@@ -141,6 +162,16 @@ tags: natural language processing, AI,Agents
 - **Whisper** — Speech recognition
 - **Sora** — Text-to-video generation
 
+### OpenAI's Strengths
+
+| Area | Rating | Description |
+|------|--------|-------------|
+| Language | ⭐⭐⭐⭐⭐ | Exceptional language capabilities |
+| Reasoning | ⭐⭐⭐⭐⭐ | Strong reasoning abilities |
+| Coding | ⭐⭐⭐⭐⭐ | Excellent coding capabilities |
+| Safety | ⭐⭐⭐⭐⭐ | High focus on safety and alignment |
+| Creativity | ⭐⭐⭐⭐⭐ | Highly creative and versatile |
+
 ### Impact & Reach
 
 - 💼 **Enterprise adoption**
@@ -156,11 +187,11 @@ tags: natural language processing, AI,Agents
 
 |  | Claude | Grok | DeepSeek | OpenAI |
 |--|--------|------|----------|--------|
-| **Language** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Reasoning** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Coding** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Language** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Reasoning** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Coding** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 | **Safety** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Creativity** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Creativity** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 
 ### Philosophical Approaches
 
