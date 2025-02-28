@@ -4,9 +4,8 @@ title:  "Introduction to RAG"
 date:   2025-02-28 15:02:32 +0530
 categories: data science
 tags: RAG, natural language processing, AI
-image: /assets/images/rag-intro.jpg
 ---
-
+![Introduction to RAG](/blog/assets/images/ragintro.jpg)
 ## Recent Developments in RAG
 
 The field of RAG has seen rapid progress in recent years, driven by innovations in its components, training methods, and scalability. Below are the key areas of advancement:
