@@ -2,7 +2,6 @@ title: KBG Blog
 email: kbgbala@outlook.com
 description: >-
   A data scientist's blog on data science, machine learning, and artificial intelligence.
-  and a martialartist's blog on martial arts, self-defense, and fitness.
 baseurl: "/blog" # Keep empty for user sites, or use "/repositoryname" for project sites
 url: "https://github.com/Balagopal-datascientist"
 github_username:  Balagopal-datascientist
