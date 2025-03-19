@@ -1,0 +1,600 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Tricks For Llm Based App Development - KBG Blog</title>
+<meta name="description" content="Want to develop a GenAI application? Here are a few techniques to help you out.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KBG Blog">
+<meta property="og:title" content="Tricks For Llm Based App Development">
+<meta property="og:url" content="http://localhost:4000/blog/2025/03/06/Tricks-For-LLM-Based-App-Development/">
+
+
+  <meta property="og:description" content="Want to develop a GenAI application? Here are a few techniques to help you out.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-06T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/2025/03/06/Tricks-For-LLM-Based-App-Development/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/blog/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="KBG Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/blog/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/blog/">
+          KBG Blog
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <div class="centered-container" style="max-width: 800px; margin: 0 auto;">
+    <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+      <meta itemprop="headline" content="Tricks For Llm Based App Development">
+      <meta itemprop="description" content="Want to develop a GenAI application? Here are a few techniques to help you out.">
+      <meta itemprop="datePublished" content="2025-03-06T00:00:00+05:30">
+      
+
+      <div class="page__inner-wrap">
+        
+          <header>
+            <h1 id="page-title" class="page__title" itemprop="headline">Tricks For Llm Based App Development
+</h1>
+            
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-06T00:00:00+05:30">March 6, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+          </header>
+        
+
+        <section class="page__content" itemprop="text">
+          
+          <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECESQRKKV3');
+</script>
+
+<p>Want to develop a GenAI application? Here are a few techniques to help you out.</p>
+
+<h2 id="prompt-engineering-techniques">Prompt Engineering Techniques</h2>
+<p>Prompt engineering is the art of designing inputs to effectively communicate with AI models. Here are five key techniques:</p>
+
+<h3 id="1-few-shot-learning">1. Few-shot Learning</h3>
+<p>Provide a few examples to demonstrate the task.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prompt:
+"I want you to classify the sentiment of these sentences as positive, negative, or neutral. Here are some examples:
+'I love this product!' → Positive
+'This is the worst day ever.' → Negative
+'The weather is okay today.' → Neutral
+Now classify: 'The movie was pretty good.'"
+Output:
+Positive
+</code></pre></div></div>
+
+<h3 id="2-zero-shot-learning">2. Zero-shot Learning</h3>
+<p>Perform a task without prior examples.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prompt:
+"Translate the following sentence from English to Spanish without any examples: 'The cat sleeps on the windowsill.'"
+Output:
+"El gato duerme en el alféizar de la ventana."
+</code></pre></div></div>
+
+<h3 id="3-chain-of-thought-cot">3. Chain of Thought (CoT)</h3>
+<p>Break down a problem into logical steps.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prompt:
+"Solve this problem step-by-step: A store sells apples for $0.50 each and oranges for $0.75 each. If I buy 3 apples and 2 oranges, how much do I spend? Please show your reasoning."
+Output:
+Let’s solve this step-by-step:
+Cost of apples = 3 apples × $0.50 per apple = $1.50
+Cost of oranges = 2 oranges × $0.75 per orange = $1.50
+Total cost = Cost of apples + Cost of oranges = $1.50 + $1.50 = $3.00
+</code></pre></div></div>
+
+<h3 id="4-role-playing">4. Role-playing</h3>
+<p>Assign the model a specific persona.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prompt:
+"Act as a pirate and tell me how ye’d find treasure on a deserted island."
+Output:
+"Arr, matey! First, I’d hoist me trusty spyglass and scour the horizon fer any glint o’ gold..."
+</code></pre></div></div>
+
+<h3 id="5-output-formatting">5. Output Formatting</h3>
+<p>Specify the desired structure of the response.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prompt:
+"List three benefits of drinking water in JSON format."
+Output:
+{ "benefits": [ "Improves hydration and energy levels", "Supports digestion and metabolism", "Helps maintain healthy skin" ] }
+</code></pre></div></div>
+
+<h2 id="structured-outputs-in-openai">Structured Outputs in OpenAI</h2>
+<p>OpenAI’s Structured Outputs ensure responses adhere to predefined JSON schemas, making it invaluable for applications requiring reliable formatting.</p>
+
+<h3 id="example-1-solving-a-math-problem">Example 1: Solving a Math Problem</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s">"your-api-key"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Step</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+	<span class="n">explanation</span><span class="p">:</span> <span class="nb">str</span>
+	<span class="n">output</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span> <span class="nc">MathSolution</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+	<span class="n">steps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Step</span><span class="p">]</span>
+	<span class="n">final_answer</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">beta</span><span class="p">.</span><span class="n">chat</span><span class="p">.</span><span class="n">completions</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span>
+	<span class="n">model</span><span class="o">=</span><span class="s">"gpt-4o-2024-08-06"</span><span class="p">,</span>
+	<span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    	<span class="p">{</span><span class="s">"role"</span><span class="p">:</span> <span class="s">"system"</span><span class="p">,</span> <span class="s">"content"</span><span class="p">:</span> <span class="s">"You are a math tutor. Provide a step-by-step solution."</span><span class="p">},</span>
+    	<span class="p">{</span><span class="s">"role"</span><span class="p">:</span> <span class="s">"user"</span><span class="p">,</span> <span class="s">"content"</span><span class="p">:</span> <span class="s">"Solve 2x + 3 = 7"</span><span class="p">}</span>
+	<span class="p">],</span>
+	<span class="n">response_format</span><span class="o">=</span><span class="n">MathSolution</span>
+<span class="p">)</span>
+
+<span class="n">solution</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">message</span><span class="p">.</span><span class="n">parsed</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">solution</span><span class="p">.</span><span class="n">steps</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Step: </span><span class="si">{</span><span class="n">step</span><span class="p">.</span><span class="n">explanation</span><span class="si">}</span><span class="s"> -&gt; </span><span class="si">{</span><span class="n">step</span><span class="p">.</span><span class="n">output</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Final Answer: </span><span class="si">{</span><span class="n">solution</span><span class="p">.</span><span class="n">final_answer</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="example-2-extracting-event-details">Example 2: Extracting Event Details</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s">"your-api-key"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Event</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+	<span class="n">date</span><span class="p">:</span> <span class="nb">str</span>
+	<span class="n">participants</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">beta</span><span class="p">.</span><span class="n">chat</span><span class="p">.</span><span class="n">completions</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span>
+	<span class="n">model</span><span class="o">=</span><span class="s">"gpt-4o-2024-08-06"</span><span class="p">,</span>
+	<span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    	<span class="p">{</span><span class="s">"role"</span><span class="p">:</span> <span class="s">"system"</span><span class="p">,</span> <span class="s">"content"</span><span class="p">:</span> <span class="s">"Extract event details from the text."</span><span class="p">},</span>
+    	<span class="p">{</span><span class="s">"role"</span><span class="p">:</span> <span class="s">"user"</span><span class="p">,</span> <span class="s">"content"</span><span class="p">:</span> <span class="s">"Alice and Bob are attending a meeting on March 10."</span><span class="p">}</span>
+	<span class="p">],</span>
+	<span class="n">response_format</span><span class="o">=</span><span class="n">Event</span>
+<span class="p">)</span>
+
+<span class="n">event</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">message</span><span class="p">.</span><span class="n">parsed</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Event: </span><span class="si">{</span><span class="n">event</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">, Date: </span><span class="si">{</span><span class="n">event</span><span class="p">.</span><span class="n">date</span><span class="si">}</span><span class="s">, Participants: </span><span class="si">{</span><span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">participants</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="data-retrieval-embedding-models-and-databases">Data Retrieval: Embedding Models and Databases</h2>
+<p>Data retrieval is crucial for applications like semantic search and recommendation systems. Embedding models transform data into numerical vectors, and embedding databases store and retrieve these vectors efficiently.</p>
+
+<h3 id="top-embedding-models-march-2025">Top Embedding Models (March 2025)</h3>
+<h4 id="open-source">Open-Source</h4>
+<ul>
+  <li><strong>NV-Embed-v2 (NVIDIA):</strong> Top MTEB score, ideal for RAG systems.</li>
+  <li><strong>BGE-M3 (BAAI):</strong> Supports 100+ languages, handles long-context data.</li>
+  <li><strong>E5-Mistral-7B-Instruct (Microsoft):</strong> Multilingual, high semantic understanding.</li>
+  <li><strong>Stella (400M and 1.5B):</strong> Cost-effective, commercial use allowed.</li>
+</ul>
+
+<h4 id="closed-source">Closed-Source</h4>
+<ul>
+  <li><strong>OpenAI text-embedding-3-large:</strong> Robust semantic understanding, API access.</li>
+  <li><strong>Voyage-3-large (Voyage AI):</strong> High retrieval relevance, API access.</li>
+  <li><strong>Cohere embed-english-v3.0:</strong> Strong for asymmetric semantic search, API access.</li>
+</ul>
+
+<h3 id="best-embedding-databases">Best Embedding Databases</h3>
+<ul>
+  <li><strong>Weaviate:</strong> Open-source, robust semantic search.</li>
+  <li><strong>Pinecone:</strong> Managed, real-time similarity search.</li>
+  <li><strong>ChromaDB:</strong> Lightweight, integrates with Python AI stacks.</li>
+  <li><strong>PGVector:</strong> PostgreSQL extension, hybrid data support.</li>
+  <li><strong>Vespa:</strong> Full-featured, advanced retrieval and ranking.</li>
+</ul>
+
+<h3 id="choosing-the-right-tools">Choosing the Right Tools</h3>
+<ul>
+  <li><strong>Research/Experimentation:</strong> NV-Embed-v2 or BGE-M3 with ChromaDB or Weaviate.</li>
+  <li><strong>Commercial Applications:</strong> Stella or Voyage-3-large with Pinecone or Vespa.</li>
+  <li><strong>Budget-Conscious:</strong> PGVector with BGE-M3 or Stella.</li>
+  <li><strong>Multilingual Needs:</strong> BGE-M3 or E5-Mistral-7B with Weaviate.</li>
+</ul>
+
+<h3 id="practical-tips">Practical Tips</h3>
+<ul>
+  <li><strong>Test on Your Data:</strong> Evaluate models on your dataset.</li>
+  <li><strong>Balance Cost and Performance:</strong> Open-source alternatives can match closed-source models.</li>
+  <li><strong>Scalability Matters:</strong> Choose a database that grows with your data volume.</li>
+</ul>
+
+<p>Data retrieval is transforming how we interact with information. Whether you opt for NV-Embed-v2, OpenAI text-embedding-3-large, or a robust database like Weaviate or Pinecone, the tools available in March 2025 empower developers to build smarter, more responsive AI systems.</p>
+
+
+          
+        </section>
+
+        <footer class="page__meta">
+          
+          
+
+
+          
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-06T00:00:00+05:30">March 6, 2025</time></p>
+
+
+        </footer>
+
+        <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Tricks+For+Llm+Based+App+Development%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+        
+  <nav class="pagination">
+    
+      <a href="/blog/2025/02/28/Introduction-to-rag/" class="pagination--pager" title="Introduction To Rag
+">Previous</a>
+    
+    
+      <a href="/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" class="pagination--pager" title="Understanding Llms Reasoning Paths
+">Next</a>
+    
+  </nav>
+
+      </div>
+    </article>
+
+    
+
+    
+      <div class="page__related">
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+        <div class="grid__wrapper">
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" rel="permalink">Understanding Llms Reasoning Paths
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-19T00:00:00+05:30">March 19, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, but understanding their decision-making process remains challenging. R...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/02/28/Introduction-to-rag/" rel="permalink">Introduction To Rag
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+
+Recent Developments in RAG
+
+</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/02/28/AI-Models-comparison/" rel="permalink">Ai Models Comparison
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+Advanced AI Models: A Comparison
+Exploring Claude, Grok, DeepSeek, and OpenAI
+
+</p>
+  </article>
+</div>
+
+          
+        </div>
+      </div>
+    
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/blog/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 KBG Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/blog/assets/js/main.min.js"></script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECESQRKKV3');
+</script>
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,508 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Understanding Llms Reasoning Paths - KBG Blog</title>
+<meta name="description" content="Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, but understanding their decision-making process remains challenging. ReasonGraph is a web-based framework designed to visualize and analyze LLM reasoning paths, providing better interpretability and debugging for AI researchers and practitioners.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KBG Blog">
+<meta property="og:title" content="Understanding Llms Reasoning Paths">
+<meta property="og:url" content="http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/">
+
+
+  <meta property="og:description" content="Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, but understanding their decision-making process remains challenging. ReasonGraph is a web-based framework designed to visualize and analyze LLM reasoning paths, providing better interpretability and debugging for AI researchers and practitioners.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-19T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/blog/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="KBG Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/blog/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/blog/">
+          KBG Blog
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <div class="centered-container" style="max-width: 800px; margin: 0 auto;">
+    <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+      <meta itemprop="headline" content="Understanding Llms Reasoning Paths">
+      <meta itemprop="description" content="Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, but understanding their decision-making process remains challenging. ReasonGraph is a web-based framework designed to visualize and analyze LLM reasoning paths, providing better interpretability and debugging for AI researchers and practitioners.">
+      <meta itemprop="datePublished" content="2025-03-19T00:00:00+05:30">
+      
+
+      <div class="page__inner-wrap">
+        
+          <header>
+            <h1 id="page-title" class="page__title" itemprop="headline">Understanding Llms Reasoning Paths
+</h1>
+            
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-19T00:00:00+05:30">March 19, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+          </header>
+        
+
+        <section class="page__content" itemprop="text">
+          
+          <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECESQRKKV3');
+</script>
+
+<p>Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, but understanding their decision-making process remains challenging. <a href="https://github.com/ZongqianLi/ReasonGraph?tab=readme-ov-file">ReasonGraph</a> is a web-based framework designed to visualize and analyze LLM reasoning paths, providing better interpretability and debugging for AI researchers and practitioners.</p>
+
+<h2 id="what-is-reasongraph">What is ReasonGraph?</h2>
+
+<p>ReasonGraph is an interactive platform that maps out the logical flow of LLM-generated responses in a structured, graph-based manner. Breaking down reasoning steps into nodes and edges, offers an intuitive way to explore how an LLM concludes. By studying the prompts in the code one can arrive at a better understanding of prompt engineering concepts as well</p>
+
+<h3 id="key-features">Key Features:</h3>
+<ul>
+  <li><strong>Graph-based Representation</strong>: Converts LLM reasoning chains into a structured graph for better interpretability.</li>
+  <li><strong>Interactive Exploration</strong>: Users can navigate reasoning steps, highlight key decisions, and analyze dependencies.</li>
+  <li><strong>Debugging &amp; Evaluation</strong>:  It helps researchers identify biases, hallucinations, and logical inconsistencies.</li>
+  <li><strong>Customizable Framework</strong>: Supports multiple LLMs and can be adapted for various applications.</li>
+</ul>
+
+<h2 id="why-is-it-important">Why is it Important?</h2>
+
+<ol>
+  <li><strong>Improves Transparency</strong>: LLMs often function as black boxes. ReasonGraph sheds light on their decision-making.</li>
+  <li><strong>Enhances Debugging</strong>: Identifies logical flaws and biases in model responses.</li>
+  <li><strong>Facilitates Research</strong>: Provides a structured method for studying AI reasoning and improving model performance.</li>
+</ol>
+
+<h2 id="how-it-works">How it Works</h2>
+
+<ul>
+  <li><strong>Input Processing</strong>: The user provides a prompt to the LLM.</li>
+  <li><strong>Reasoning Extraction</strong>: The LLM generates responses with intermediate reasoning steps.</li>
+  <li><strong>Graph Construction</strong>: The reasoning path is structured as a directed graph.</li>
+  <li><strong>Visualization &amp; Analysis</strong>: The user interacts with the graph to inspect relationships and decision paths.</li>
+</ul>
+
+<h2 id="applications">Applications</h2>
+
+<ul>
+  <li><strong>AI Research &amp; Debugging</strong>: Helps in fine-tuning models and understanding reasoning failures.</li>
+  <li><strong>Education &amp; Training</strong>: Assists in teaching logical reasoning using AI-generated graphs.</li>
+  <li><strong>Complex Problem Solving</strong>: Useful for multi-step decision-making in tasks like law, medicine, and finance.</li>
+</ul>
+
+<h2 id="example-use-case-of-reasongraph">Example use case of ReasonGraph</h2>
+
+<ul>
+  <li><strong>Scenario</strong>: An LLM is tasked with answering a complex legal question.</li>
+  <li><strong>Input</strong>: “What are the legal implications of AI-generated content in copyright law?”</li>
+  <li>
+    <p><strong>Graph Visualization</strong>:<br />
+  Below is an example of how ReasonGraph visualizes the reasoning path for the given input.</p>
+
+    <p><img src="https://raw.githubusercontent.com/Balagopal-datascientist/blog/refs/heads/master/assets/images/reasoning.svg" alt="ReasonGraph" /></p>
+
+    <p>The graph highlights key reasoning nodes and their connections, making it easier to trace the logical flow and identify potential issues.</p>
+  </li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>ReasonGraph provides an innovative approach to making LLMs more interpretable and transparent. As AI continues to evolve, tools like this will be crucial for improving trust and reliability in automated reasoning systems.</p>
+
+<p><em>Stay tuned for more updates on AI reasoning and visualization!</em></p>
+
+
+          
+        </section>
+
+        <footer class="page__meta">
+          
+          
+
+
+          
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-19T00:00:00+05:30">March 19, 2025</time></p>
+
+
+        </footer>
+
+        <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Understanding+Llms+Reasoning+Paths%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F19%2FUnderstanding-LLMs-Reasoning-Paths%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F19%2FUnderstanding-LLMs-Reasoning-Paths%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F19%2FUnderstanding-LLMs-Reasoning-Paths%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+        
+  <nav class="pagination">
+    
+      <a href="/blog/2025/03/06/Tricks-For-LLM-Based-App-Development/" class="pagination--pager" title="Tricks For Llm Based App Development
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+      </div>
+    </article>
+
+    
+
+    
+      <div class="page__related">
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+        <div class="grid__wrapper">
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/03/06/Tricks-For-LLM-Based-App-Development/" rel="permalink">Tricks For Llm Based App Development
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-06T00:00:00+05:30">March 6, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+Want to develop a GenAI application? Here are a few techniques to help you out.
+
+</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/02/28/Introduction-to-rag/" rel="permalink">Introduction To Rag
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+
+Recent Developments in RAG
+
+</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/02/28/AI-Models-comparison/" rel="permalink">Ai Models Comparison
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+Advanced AI Models: A Comparison
+Exploring Claude, Grok, DeepSeek, and OpenAI
+
+</p>
+  </article>
+</div>
+
+          
+        </div>
+      </div>
+    
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/blog/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 KBG Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/blog/assets/js/main.min.js"></script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECESQRKKV3');
+</script>
+
+
+
+
+
+  </body>
+</html>
