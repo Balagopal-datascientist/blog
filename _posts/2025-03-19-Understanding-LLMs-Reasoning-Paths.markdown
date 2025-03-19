@@ -46,7 +46,7 @@ ReasonGraph is an interactive platform that maps out the logical flow of LLM-gen
 - **Graph Visualization**:  
     Below is an example of how ReasonGraph visualizes the reasoning path for the given input.  
 
-    ![ReasonGraph](assets\images\reasoning.svg)
+    ![ReasonGraph](https://raw.githubusercontent.com/Balagopal-datascientist/blog/refs/heads/master/assets/images/reasoning.svg)
 
     The graph highlights key reasoning nodes and their connections, making it easier to trace the logical flow and identify potential issues.
 
