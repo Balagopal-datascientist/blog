@@ -1,3 +1,4 @@
+{% include analytics.html %}
 ## Introduction
 Want to develop a GenAI application? Here are a few techniques to help you out.
 
