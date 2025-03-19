@@ -1,3 +1,4 @@
+masthead_title: KBG Blog
 title: KBG Blog
 email: kbgbala@outlook.com
 description: >-
@@ -5,14 +6,19 @@ description: >-
 baseurl: "/blog" # Keep empty for user sites, or use "/repositoryname" for project sites
 url: "https://github.com/Balagopal-datascientist"
 github_username:  Balagopal-datascientist
+minimal_mistakes_skin: "contrast"
+classes:
+  - wide
 
-# Build settings
-theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.24.0" 
+
 plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-gist
 
 # Pagination settings
 paginate: 5
@@ -20,3 +26,18 @@ paginate_path: "/page:num/"
 
 # Post settings
 permalink: /:year/:month/:day/:title/
+
+# Remove author sidebar from posts
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false  # Set to false for centered content
+      read_time: true
+      share: true
+      related: true
+      show_date: true
+      classes: wide

@@ -1,10 +1,3 @@
----
-layout: post
-title:  "Introduction to RAG"
-date:   2025-02-28 15:02:32 +0530
-categories: data science
-tags: RAG, natural language processing, AI
----
 {% include analytics.html %}
 ![Introduction to RAG](/blog/assets/images/ragintro.jpg)
 ## Recent Developments in RAG

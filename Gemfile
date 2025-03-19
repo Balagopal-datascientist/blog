@@ -13,6 +13,8 @@ gem "jekyll-feed", "~> 0.12"
 
 gem "bigdecimal"
 
+gem "minimal-mistakes-jekyll"
+gem "jekyll-include-cache"
 group :jekyll_plugins do
   gem "jekyll-paginate"
   gem "jekyll-sitemap"

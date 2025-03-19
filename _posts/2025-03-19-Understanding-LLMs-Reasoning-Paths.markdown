@@ -1,13 +1,4 @@
----
-layout: post
-title: "Understanding LLMs Reasoning Paths"
-date:   2025-03-19 10:30:00 +0530
-categories: data science
-tags: LLM, AI, Reasoning, Visualization
----
 {% include analytics.html %}
-## Introduction
-
 Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, but understanding their decision-making process remains challenging. [ReasonGraph](https://github.com/ZongqianLi/ReasonGraph?tab=readme-ov-file) is a web-based framework designed to visualize and analyze LLM reasoning paths, providing better interpretability and debugging for AI researchers and practitioners.
 
 ## What is ReasonGraph?

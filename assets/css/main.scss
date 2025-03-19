@@ -1,0 +1,59 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minimal-mistakes";
+
+// Center content and limit width
+.page {
+  width: 100%;
+  padding-right: 0;
+}
+
+.page__inner-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Remove right sidebar padding when no sidebar
+.page__content {
+  padding-right: 0;
+}
+
+// Improve typography
+.page__content {
+  font-size: 1em;
+  line-height: 1.8;
+}
+
+// Auto-resize images
+.page__content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+  border-radius: 4px;
+}
+
+// Center article titles
+.page__title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+// Improve spacing for paragraphs
+.page__content p {
+  margin-bottom: 1.5em;
+}
+
+// Center the post date if shown
+.page__meta {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+// Ensure code blocks don't overflow
+div.highlighter-rouge pre.highlight {
+  max-width: 100%;
+  overflow-x: auto;
+}
