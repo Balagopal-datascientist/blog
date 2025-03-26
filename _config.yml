@@ -3,7 +3,7 @@ title: KBG Blog
 email: kbgbala@outlook.com
 description: >-
   A data scientist's blog on data science, machine learning, and artificial intelligence.
-baseurl: "" #/blog  Keep empty for user sites, or use "/repositoryname" for project sites
+baseurl: "/blog" # Keep empty for user sites, or use "/repositoryname" for project sites
 url: "https://github.com/Balagopal-datascientist"
 github_username:  Balagopal-datascientist
 minimal_mistakes_skin: "contrast"
