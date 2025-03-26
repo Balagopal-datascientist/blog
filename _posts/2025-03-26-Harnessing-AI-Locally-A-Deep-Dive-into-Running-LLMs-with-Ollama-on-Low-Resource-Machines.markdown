@@ -1,5 +1,5 @@
 {% include analytics.html %}
-
+![ollama image](https://raw.githubusercontent.com/Balagopal-datascientist/blog/refs/heads/theme/assets/images/ollama.png)
 Ollama is a tool that lets you run LLMs on your own computer, which is great for keeping your data private and avoiding cloud costs. It’s especially helpful if you want to experiment with AI without relying on external servers.
 
 ### Key Points
