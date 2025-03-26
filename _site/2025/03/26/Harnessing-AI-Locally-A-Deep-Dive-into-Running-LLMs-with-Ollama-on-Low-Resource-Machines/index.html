@@ -1,0 +1,603 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines - KBG Blog</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KBG Blog">
+<meta property="og:title" content="Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines">
+<meta property="og:url" content="http://localhost:4000/blog/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-26T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/blog/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="KBG Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/blog/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/blog/">
+          KBG Blog
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <div class="centered-container" style="max-width: 800px; margin: 0 auto;">
+    <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+      <meta itemprop="headline" content="Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines">
+      <meta itemprop="description" content="">
+      <meta itemprop="datePublished" content="2025-03-26T00:00:00+05:30">
+      
+
+      <div class="page__inner-wrap">
+        
+          <header>
+            <h1 id="page-title" class="page__title" itemprop="headline">Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines
+</h1>
+            
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-26T00:00:00+05:30">March 26, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+          </header>
+        
+
+        <section class="page__content" itemprop="text">
+          
+          <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECESQRKKV3');
+</script>
+
+<p>Ollama is a tool that lets you run LLMs on your own computer, which is great for keeping your data private and avoiding cloud costs. It’s especially helpful if you want to experiment with AI without relying on external servers.</p>
+
+<h3 id="key-points">Key Points</h3>
+<ul>
+  <li>Ollama is an open-source framework for running large language models (LLMs) locally, which seems likely to work well for privacy and control.</li>
+  <li>It can run on low-resource machines by using smaller models and quantization, though performance may vary.</li>
+  <li>At least 8GB of RAM is needed for smaller models, and a GPU can help but isn’t always required.</li>
+  <li>It is user-friendly, with easy installation on Windows, macOS, and Linux, and support for various models.</li>
+</ul>
+
+<h3 id="why-it-works-well">Why It Works Well</h3>
+<p>Ollama works well because it offers local execution, meaning all processing happens on your machine, which is good for security. It also has a wide range of models, like Llama 2 and Mistral,Deepseek,Gemma and can use GPU acceleration for faster performance if available. For low-resource machines, it uses techniques like quantization to reduce memory use, making it possible to run on systems with limited RAM and CPU power.</p>
+
+<h3 id="using-ollama-on-low-resource-machines">Using Ollama on Low-Resource Machines</h3>
+<p>To use ollama on a machine with low resources, start by installing it on your operating system—Windows, macOS, or Linux. Choose smaller models, like orca-mini:3b, which need at least 8GB of RAM. You can adjust quantization levels to save memory, and if you have an older GPU, it might help, though CPU-only mode is an option. Be prepared for slower response times, especially without a GPU.</p>
+
+<h3 id="appeal-to-developers-and-businesses">Appeal to Developers and Businesses</h3>
+<p>It is particularly appealing for AI developers, researchers, and businesses concerned with data privacy and control, as it allows running models locally without relying on cloud-based solutions. This is especially relevant in industries like healthcare, finance, and government, where data security is paramount. The framework, actively maintained and regularly updated, provides a lightweight and extensible platform, making it accessible even for users with limited technical expertise.</p>
+
+<p>Ollama’s effectiveness stems from several key features that enhance its usability and performance, particularly on local machines:</p>
+
+<ul>
+  <li><strong>Local Execution</strong>: By running LLMs locally, ollama mitigates privacy concerns associated with cloud-based solutions. It ensures greater control over data, faster processing speeds, and reduced reliance on external servers, which is crucial for offline or secure environments. This is supported by its ability to create an isolated environment that prevents conflicts with other software.</li>
+  <li><strong>Extensive Model Library</strong>: Ollama offers access to a diverse library of pre-trained LLMs, including models like Llama 3, Mistral, and Gemma, ranging from 2B to 70B parameters. This variety allows users to select models tailored to their hardware capabilities and task requirements, ensuring flexibility.</li>
+  <li><strong>Seamless Integration</strong>: The framework integrates easily with various tools, frameworks, and programming languages, such as Python, LangChain, and LlamaIndex. This makes it convenient for developers to incorporate LLMs into their workflows, enhancing productivity.</li>
+  <li><strong>GPU and CPU Support</strong>: Ollama leverages GPU acceleration for improved performance, supporting Nvidia and AMD GPUs with compute capability of at least 5.0. However, it can also run in CPU-only mode, which is essential for low-resource machines. While GPU support is recommended for larger models, CPU mode is viable for smaller models, though slower.</li>
+  <li><strong>Quantization and Optimization</strong>: Ollama uses 4-bit quantization by default, reducing memory and computational requirements, which is crucial for low-resource setups. Users can adjust quantization levels (e.g., q4, q8) to balance accuracy and performance.</li>
+</ul>
+
+<h4 id="system-requirements-and-considerations-for-low-resource-machines">System Requirements and Considerations for Low-Resource Machines</h4>
+<p>Running LLMs locally can be resource-intensive, but ollama is designed to work on machines with limited capabilities through several strategies:</p>
+
+<ul>
+  <li><strong>Minimum Hardware Requirements</strong>: Research suggests that for optimal performance, a system should have at least 16GB of RAM and a CPU supporting AVX512 or DDR5 for efficiency. However, practical minimums include 8GB of RAM for 7b models and 50GB of disk space.</li>
+  <li><strong>Role of GPU and CPU Instructions</strong>: A GPU is not required but significantly boosts performance, especially for models at 7B parameters or higher. For CPUs without AVX or AVX2, ollama can still run in CPU-only mode, though performance may be slower.</li>
+  <li><strong>Quantization Impact</strong>: Quantization reduces model size by lowering precision, with 4-bit being the default, requiring less memory and computation.</li>
+  <li><strong>Choosing the Right Model Size</strong>: For low-resource machines, selecting smaller models is crucial. Here’s a table of memory requirements:</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Size</th>
+      <th>Minimum RAM Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3b</td>
+      <td>~8GB (estimated)</td>
+    </tr>
+    <tr>
+      <td>7b</td>
+      <td>8GB</td>
+    </tr>
+    <tr>
+      <td>13b</td>
+      <td>16GB</td>
+    </tr>
+    <tr>
+      <td>70b</td>
+      <td>64GB</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="installation-and-setup-process">Installation and Setup Process</h4>
+<p>Ollama’s installation is straightforward across major operating systems:</p>
+
+<ul>
+  <li><strong>Windows</strong>: Download the executable from the official site and run it. No administrator rights are needed, and it installs in the home directory.</li>
+  <li><strong>macOS</strong>: Download the .dmg file, unzip it, and drag the application to the Applications folder. Verify via Terminal with <code class="language-plaintext highlighter-rouge">ollama</code>.</li>
+  <li><strong>Linux</strong>: Use the installation script: <code class="language-plaintext highlighter-rouge">curl -fsSL https://ollama.com/install.sh | sh</code>.</li>
+</ul>
+
+<p>For low-resource machines, ensure sufficient disk space and close unnecessary applications to free up RAM.</p>
+
+<h4 id="using-ollama-practical-steps">Using Ollama: Practical Steps</h4>
+<p>Once installed, interact with ollama via command-line:</p>
+
+<ul>
+  <li><strong>Pulling Models</strong>: Use <code class="language-plaintext highlighter-rouge">ollama pull [model_name]</code>, e.g., <code class="language-plaintext highlighter-rouge">ollama pull orca-mini:3b</code>.</li>
+  <li><strong>Running Models</strong>: Run with <code class="language-plaintext highlighter-rouge">ollama run [model_name]</code>, e.g., <code class="language-plaintext highlighter-rouge">ollama run orca-mini:3b</code>.</li>
+  <li><strong>Customizing Prompts</strong>: Modify prompts for tailored responses; use the API at <code class="language-plaintext highlighter-rouge">http://localhost:11434</code>.</li>
+  <li><strong>API Usage</strong>: The API enables integration with other tools.</li>
+</ul>
+
+<h4 id="optimizations-for-low-resource-machines">Optimizations for Low-Resource Machines</h4>
+<p>Maximize performance with these strategies:</p>
+
+<ul>
+  <li><strong>Using Smaller Models</strong>: Opt for models like orca-mini:3b (~8GB RAM).</li>
+  <li><strong>Adjusting Quantization Levels</strong>: Use 4-bit quantization for lower memory use.</li>
+  <li><strong>Managing Memory Usage</strong>: Close background processes to free up RAM.</li>
+  <li><strong>CPU-Only Mode</strong>: Viable for machines without GPUs, though slower.</li>
+</ul>
+
+<h4 id="usefull-links">Usefull Links</h4>
+<ul>
+  <li><a href="https://ollama.com/">Ollama Official Site</a></li>
+</ul>
+
+<h4 id="conclusion">Conclusion</h4>
+<p>Ollama provides a robust framework for running LLMs locally, even on low-resource machines. By leveraging smaller models, quantization, and resource management, users can enjoy privacy and control, democratizing AI access despite hardware limitations.</p>
+
+          
+        </section>
+
+        <footer class="page__meta">
+          
+          
+
+
+          
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-26T00:00:00+05:30">March 26, 2025</time></p>
+
+
+        </footer>
+
+        <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Harnessing+Ai+Locally+A+Deep+Dive+Into+Running+Llms+With+Ollama+On+Low+Resource+Machines%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F26%2FHarnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F26%2FHarnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F26%2FHarnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+        
+  <nav class="pagination">
+    
+      <a href="/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" class="pagination--pager" title="Understanding Llms Reasoning Paths
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+      </div>
+    </article>
+
+    
+
+    
+      <div class="page__related">
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+        <div class="grid__wrapper">
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" rel="permalink">Understanding Llms Reasoning Paths
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-19T00:00:00+05:30">March 19, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, but understanding their decision-making process remains challenging. R...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/03/06/Tricks-For-LLM-Based-App-Development/" rel="permalink">Tricks For Llm Based App Development
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-06T00:00:00+05:30">March 6, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+Want to develop a GenAI application? Here are a few techniques to help you out.
+
+</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/02/28/Introduction-to-rag/" rel="permalink">Introduction To Rag
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+
+Recent Developments in RAG
+
+</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2025/02/28/AI-Models-comparison/" rel="permalink">Ai Models Comparison
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+
+Advanced AI Models: A Comparison
+Exploring Claude, Grok, DeepSeek, and OpenAI
+
+</p>
+  </article>
+</div>
+
+          
+        </div>
+      </div>
+    
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/blog/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 KBG Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/blog/assets/js/main.min.js"></script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECESQRKKV3');
+</script>
+
+
+
+
+
+  </body>
+</html>

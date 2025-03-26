@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2025-03-19T16:30:45+05:30</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">KBG Blog</title><subtitle>A data scientist&apos;s blog on data science, machine learning, and artificial intelligence.</subtitle><entry><title type="html">Understanding Llms Reasoning Paths</title><link href="http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" rel="alternate" type="text/html" title="Understanding Llms Reasoning Paths" /><published>2025-03-19T00:00:00+05:30</published><updated>2025-03-19T00:00:00+05:30</updated><id>http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths</id><content type="html" xml:base="http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/"><![CDATA[<!-- Google tag (gtag.js) -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2025-03-26T12:12:08+05:30</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">KBG Blog</title><subtitle>A data scientist&apos;s blog on data science, machine learning, and artificial intelligence.</subtitle><entry><title type="html">Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines</title><link href="http://localhost:4000/blog/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines/" rel="alternate" type="text/html" title="Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines" /><published>2025-03-26T00:00:00+05:30</published><updated>2025-03-26T00:00:00+05:30</updated><id>http://localhost:4000/blog/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines</id><content type="html" xml:base="http://localhost:4000/blog/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines/"><![CDATA[<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECESQRKKV3');
+</script>
+
+<p>Ollama is a tool that lets you run LLMs on your own computer, which is great for keeping your data private and avoiding cloud costs. It’s especially helpful if you want to experiment with AI without relying on external servers.</p>
+
+<h3 id="key-points">Key Points</h3>
+<ul>
+  <li>Ollama is an open-source framework for running large language models (LLMs) locally, which seems likely to work well for privacy and control.</li>
+  <li>It can run on low-resource machines by using smaller models and quantization, though performance may vary.</li>
+  <li>At least 8GB of RAM is needed for smaller models, and a GPU can help but isn’t always required.</li>
+  <li>It is user-friendly, with easy installation on Windows, macOS, and Linux, and support for various models.</li>
+</ul>
+
+<h3 id="why-it-works-well">Why It Works Well</h3>
+<p>Ollama works well because it offers local execution, meaning all processing happens on your machine, which is good for security. It also has a wide range of models, like Llama 2 and Mistral,Deepseek,Gemma and can use GPU acceleration for faster performance if available. For low-resource machines, it uses techniques like quantization to reduce memory use, making it possible to run on systems with limited RAM and CPU power.</p>
+
+<h3 id="using-ollama-on-low-resource-machines">Using Ollama on Low-Resource Machines</h3>
+<p>To use ollama on a machine with low resources, start by installing it on your operating system—Windows, macOS, or Linux. Choose smaller models, like orca-mini:3b, which need at least 8GB of RAM. You can adjust quantization levels to save memory, and if you have an older GPU, it might help, though CPU-only mode is an option. Be prepared for slower response times, especially without a GPU.</p>
+
+<h3 id="appeal-to-developers-and-businesses">Appeal to Developers and Businesses</h3>
+<p>It is particularly appealing for AI developers, researchers, and businesses concerned with data privacy and control, as it allows running models locally without relying on cloud-based solutions. This is especially relevant in industries like healthcare, finance, and government, where data security is paramount. The framework, actively maintained and regularly updated, provides a lightweight and extensible platform, making it accessible even for users with limited technical expertise.</p>
+
+<p>Ollama’s effectiveness stems from several key features that enhance its usability and performance, particularly on local machines:</p>
+
+<ul>
+  <li><strong>Local Execution</strong>: By running LLMs locally, ollama mitigates privacy concerns associated with cloud-based solutions. It ensures greater control over data, faster processing speeds, and reduced reliance on external servers, which is crucial for offline or secure environments. This is supported by its ability to create an isolated environment that prevents conflicts with other software.</li>
+  <li><strong>Extensive Model Library</strong>: Ollama offers access to a diverse library of pre-trained LLMs, including models like Llama 3, Mistral, and Gemma, ranging from 2B to 70B parameters. This variety allows users to select models tailored to their hardware capabilities and task requirements, ensuring flexibility.</li>
+  <li><strong>Seamless Integration</strong>: The framework integrates easily with various tools, frameworks, and programming languages, such as Python, LangChain, and LlamaIndex. This makes it convenient for developers to incorporate LLMs into their workflows, enhancing productivity.</li>
+  <li><strong>GPU and CPU Support</strong>: Ollama leverages GPU acceleration for improved performance, supporting Nvidia and AMD GPUs with compute capability of at least 5.0. However, it can also run in CPU-only mode, which is essential for low-resource machines. While GPU support is recommended for larger models, CPU mode is viable for smaller models, though slower.</li>
+  <li><strong>Quantization and Optimization</strong>: Ollama uses 4-bit quantization by default, reducing memory and computational requirements, which is crucial for low-resource setups. Users can adjust quantization levels (e.g., q4, q8) to balance accuracy and performance.</li>
+</ul>
+
+<h4 id="system-requirements-and-considerations-for-low-resource-machines">System Requirements and Considerations for Low-Resource Machines</h4>
+<p>Running LLMs locally can be resource-intensive, but ollama is designed to work on machines with limited capabilities through several strategies:</p>
+
+<ul>
+  <li><strong>Minimum Hardware Requirements</strong>: Research suggests that for optimal performance, a system should have at least 16GB of RAM and a CPU supporting AVX512 or DDR5 for efficiency. However, practical minimums include 8GB of RAM for 7b models and 50GB of disk space.</li>
+  <li><strong>Role of GPU and CPU Instructions</strong>: A GPU is not required but significantly boosts performance, especially for models at 7B parameters or higher. For CPUs without AVX or AVX2, ollama can still run in CPU-only mode, though performance may be slower.</li>
+  <li><strong>Quantization Impact</strong>: Quantization reduces model size by lowering precision, with 4-bit being the default, requiring less memory and computation.</li>
+  <li><strong>Choosing the Right Model Size</strong>: For low-resource machines, selecting smaller models is crucial. Here’s a table of memory requirements:</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Size</th>
+      <th>Minimum RAM Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3b</td>
+      <td>~8GB (estimated)</td>
+    </tr>
+    <tr>
+      <td>7b</td>
+      <td>8GB</td>
+    </tr>
+    <tr>
+      <td>13b</td>
+      <td>16GB</td>
+    </tr>
+    <tr>
+      <td>70b</td>
+      <td>64GB</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="installation-and-setup-process">Installation and Setup Process</h4>
+<p>Ollama’s installation is straightforward across major operating systems:</p>
+
+<ul>
+  <li><strong>Windows</strong>: Download the executable from the official site and run it. No administrator rights are needed, and it installs in the home directory.</li>
+  <li><strong>macOS</strong>: Download the .dmg file, unzip it, and drag the application to the Applications folder. Verify via Terminal with <code class="language-plaintext highlighter-rouge">ollama</code>.</li>
+  <li><strong>Linux</strong>: Use the installation script: <code class="language-plaintext highlighter-rouge">curl -fsSL https://ollama.com/install.sh | sh</code>.</li>
+</ul>
+
+<p>For low-resource machines, ensure sufficient disk space and close unnecessary applications to free up RAM.</p>
+
+<h4 id="using-ollama-practical-steps">Using Ollama: Practical Steps</h4>
+<p>Once installed, interact with ollama via command-line:</p>
+
+<ul>
+  <li><strong>Pulling Models</strong>: Use <code class="language-plaintext highlighter-rouge">ollama pull [model_name]</code>, e.g., <code class="language-plaintext highlighter-rouge">ollama pull orca-mini:3b</code>.</li>
+  <li><strong>Running Models</strong>: Run with <code class="language-plaintext highlighter-rouge">ollama run [model_name]</code>, e.g., <code class="language-plaintext highlighter-rouge">ollama run orca-mini:3b</code>.</li>
+  <li><strong>Customizing Prompts</strong>: Modify prompts for tailored responses; use the API at <code class="language-plaintext highlighter-rouge">http://localhost:11434</code>.</li>
+  <li><strong>API Usage</strong>: The API enables integration with other tools.</li>
+</ul>
+
+<h4 id="optimizations-for-low-resource-machines">Optimizations for Low-Resource Machines</h4>
+<p>Maximize performance with these strategies:</p>
+
+<ul>
+  <li><strong>Using Smaller Models</strong>: Opt for models like orca-mini:3b (~8GB RAM).</li>
+  <li><strong>Adjusting Quantization Levels</strong>: Use 4-bit quantization for lower memory use.</li>
+  <li><strong>Managing Memory Usage</strong>: Close background processes to free up RAM.</li>
+  <li><strong>CPU-Only Mode</strong>: Viable for machines without GPUs, though slower.</li>
+</ul>
+
+<h4 id="usefull-links">Usefull Links</h4>
+<ul>
+  <li><a href="https://ollama.com/">Ollama Official Site</a></li>
+</ul>
+
+<h4 id="conclusion">Conclusion</h4>
+<p>Ollama provides a robust framework for running LLMs locally, even on low-resource machines. By leveraging smaller models, quantization, and resource management, users can enjoy privacy and control, democratizing AI access despite hardware limitations.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Understanding Llms Reasoning Paths</title><link href="http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" rel="alternate" type="text/html" title="Understanding Llms Reasoning Paths" /><published>2025-03-19T00:00:00+05:30</published><updated>2025-03-19T00:00:00+05:30</updated><id>http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths</id><content type="html" xml:base="http://localhost:4000/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/"><![CDATA[<!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ECESQRKKV3"></script>
 
 <script>

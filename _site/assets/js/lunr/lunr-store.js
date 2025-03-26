@@ -22,4 +22,10 @@ var store = [{
         "tags": [],
         "url": "/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/",
         "teaser": null
+      },{
+        "title": "Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines",
+        "excerpt":"Ollama is a tool that lets you run LLMs on your own computer, which is great for keeping your data private and avoiding cloud costs. It’s especially helpful if you want to experiment with AI without relying on external servers. Key Points Ollama is an open-source framework for running large...","categories": [],
+        "tags": [],
+        "url": "/blog/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines/",
+        "teaser": null
       }]
