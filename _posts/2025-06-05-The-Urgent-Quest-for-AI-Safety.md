@@ -1,5 +1,8 @@
 
 # 🤖 The Urgent Quest for AI Safety: Why It Matters and What We Must Do
+![AI Safety Illustration - image by freepik](https://raw.githubusercontent.com/Balagopal-datascientist/blog/refs/heads/master/assets/images/20945658.jpg)
+
+*An illustration representing the complexity and urgency of AI safety.*
 
 Artificial Intelligence (AI) is no longer a niche field confined to academic research or science fiction novels. From voice assistants and recommendation systems to large language models and autonomous vehicles, AI now powers much of our digital and physical infrastructure. As the pace of development accelerates—especially with the rise of general-purpose models like GPT-4 and beyond—AI safety has become a critical concern.
 
