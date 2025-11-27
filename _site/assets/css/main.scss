@@ -1,72 +1,398 @@
---- # Only the main Sass file needs front matter (the dashes are enough) --- @import "minimal-mistakes";
+﻿---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
 
-// Center content and limit width
+@import "minimal-mistakes";
+
+// ============================================
+// MODERN DARK THEME WITH CYAN ACCENTS
+// ============================================
+
+// Color Palette
+$dark-bg: #1a2332;
+$darker-bg: #0f1621;
+$card-bg: #243447;
+$card-border: #2d4159;
+$cyan-primary: #5dade2;
+$cyan-light: #85c1e9;
+$cyan-accent: #00d4ff;
+$purple-accent: #9b59b6;
+$text-primary: #e8eef2;
+$text-secondary: #a8b8c8;
+$text-muted: #6b7c8f;
+
+// Global Background
+body {
+  background: $dark-bg !important;
+  color: $text-primary !important;
+}
+
+.page {
+  background: $dark-bg !important;
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $cyan-primary !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.page__title {
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: $cyan-primary !important;
+  font-size: 2.5em;
+  position: relative;
+  padding-bottom: 0.5em;
+  
+  // Cyan underline accent
+  &:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, $cyan-accent, $purple-accent);
+    margin: 0.5em auto 0;
+    border-radius: 2px;
+  }
+}
+
+// ============================================
+// LAYOUT
+// ============================================
+
 .page {
   width: 100%;
   padding-right: 0;
 }
 
 .page__inner-wrap {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 2em 1em;
 }
 
-// Remove right sidebar padding when no sidebar
 .page__content {
   padding-right: 0;
-}
-
-// Improve typography
-.page__content {
   font-size: 1em;
   line-height: 1.8;
+  color: $text-secondary;
 }
 
-// Auto-resize images
+.page__content p {
+  margin-bottom: 1.5em;
+  color: $text-secondary;
+}
+
+// ============================================
+// CARD COMPONENTS
+// ============================================
+
+.archive__item {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 12px;
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(93, 173, 226, 0.2);
+    border-color: $cyan-primary;
+  }
+}
+
+.archive__item-title {
+  color: $text-primary !important;
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+
+.archive__item-excerpt {
+  color: $text-secondary;
+  line-height: 1.6;
+}
+
+// ============================================
+// LINKS
+// ============================================
+
+a {
+  color: $cyan-primary;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $cyan-light;
+  }
+}
+
+.archive__item a {
+  color: $cyan-primary;
+  
+  &:hover {
+    color: $cyan-light;
+  }
+}
+
+// ============================================
+// NAVIGATION
+// ============================================
+
+.greedy-nav {
+  background: $darker-bg !important;
+  border-bottom: 2px solid $card-border;
+  
+  a {
+    color: $text-secondary;
+    font-weight: 500;
+    
+    &:hover {
+      color: $cyan-primary;
+    }
+  }
+  
+  .site-title {
+    color: $cyan-primary !important;
+    font-weight: 700;
+  }
+}
+
+.masthead {
+  background: $darker-bg !important;
+  border-bottom: 2px solid $card-border;
+}
+
+// ============================================
+// SECTION HEADERS (Experience, Skills style)
+// ============================================
+
+h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin: 2em 0 1.5em;
+  position: relative;
+  padding-bottom: 0.5em;
+  
+  &:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, $cyan-accent, $purple-accent);
+    margin: 0.5em auto 0;
+    border-radius: 2px;
+  }
+}
+
+// ============================================
+// IMAGES
+// ============================================
+
 .page__content img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1em auto;
+  margin: 1.5em auto;
+  border-radius: 8px;
+  border: 1px solid $card-border;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+// ============================================
+// CODE BLOCKS
+// ============================================
+
+code {
+  background: $darker-bg;
+  color: $cyan-light;
+  padding: 0.2em 0.4em;
   border-radius: 4px;
+  border: 1px solid $card-border;
 }
 
-// Center article titles
-.page__title {
-  text-align: center;
-  margin-bottom: 1em;
+pre {
+  background: $darker-bg !important;
+  border: 1px solid $card-border;
+  border-radius: 8px;
+  padding: 1em;
 }
 
-// Improve spacing for paragraphs
-.page__content p {
-  margin-bottom: 1.5em;
-}
-
-
-// Center the post date if shown
-.page__meta {
-  text-align: center;
-  margin-bottom: 2em;
-}
-
-// Ensure code blocks don't overflow
 div.highlighter-rouge pre.highlight {
   max-width: 100%;
   overflow-x: auto;
+  background: $darker-bg;
 }
 
-.archive__item a {
-  color: #64b5f6; // Light blue for better contrast on dark
+// ============================================
+// META INFORMATION
+// ============================================
+
+.page__meta {
+  text-align: center;
+  margin-bottom: 2em;
+  color: $text-muted;
+  font-size: 0.9em;
 }
 
-.archive__item a:hover {
-  color: #90caf9; // Lighter blue on hover
+// ============================================
+// FOOTER
+// ============================================
+
+.page__footer {
+  background: $darker-bg !important;
+  border-top: 2px solid $card-border;
+  color: $text-secondary;
 }
 
-.greedy-nav a {
-  color: #e0e0e0; // Light gray for nav items
+.page__footer-copyright {
+  color: $text-muted;
 }
 
-.greedy-nav a:hover {
-  color: #ffffff; // White on hover
+// ============================================
+// LISTS
+// ============================================
+
+ul, ol {
+  color: $text-secondary;
+  
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+// ============================================
+// BLOCKQUOTES
+// ============================================
+
+blockquote {
+  border-left: 4px solid $cyan-primary;
+  background: $card-bg;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  color: $text-secondary;
+}
+
+// ============================================
+// TABLES
+// ============================================
+
+table {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  th {
+    background: $darker-bg;
+    color: $cyan-primary;
+    font-weight: 600;
+    padding: 0.75em;
+    border-bottom: 2px solid $cyan-primary;
+  }
+  
+  td {
+    padding: 0.75em;
+    border-bottom: 1px solid $card-border;
+    color: $text-secondary;
+  }
+  
+  tr:hover {
+    background: rgba(93, 173, 226, 0.1);
+  }
+}
+
+// ============================================
+// BUTTONS & INTERACTIVE ELEMENTS
+// ============================================
+
+.btn {
+  background: linear-gradient(135deg, $cyan-primary, $purple-accent);
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(93, 173, 226, 0.4);
+  }
+}
+
+// ============================================
+// PAGINATION
+// ============================================
+
+.pagination {
+  margin: 2em 0;
+  text-align: center;
+  
+  a, span {
+    background: $card-bg;
+    color: $cyan-primary;
+    padding: 0.5em 1em;
+    margin: 0 0.25em;
+    border-radius: 6px;
+    border: 1px solid $card-border;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: $cyan-primary;
+      color: white;
+      border-color: $cyan-primary;
+    }
+  }
+  
+  .current {
+    background: $cyan-primary;
+    color: white;
+    border-color: $cyan-primary;
+  }
+}
+
+// ============================================
+// SIDEBAR (if used)
+// ============================================
+
+.sidebar {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 12px;
+  padding: 1.5em;
+  
+  h2, h3 {
+    color: $cyan-primary !important;
+  }
+}
+
+// ============================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================
+
+@media (max-width: 768px) {
+  .page__title {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+  }
+  
+  .page__inner-wrap {
+    padding: 1em 0.5em;
+  }
 }
