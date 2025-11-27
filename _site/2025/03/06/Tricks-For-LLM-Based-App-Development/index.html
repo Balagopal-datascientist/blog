@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Tricks For Llm Based App Development - KBG Blog</title>
-<meta name="description" content="Want to develop a GenAI application? Here are a few techniques to help you out.">
+<meta name="description" content="Want to develop a GenAI application? Here are a few techniques to help you out.  Prompt Engineering Techniques Prompt engineering is the art of designing inputs to effectively communicate with AI models. Here are five key techniques:  1. Few-shot Learning Provide a few examples to demonstrate the task. Prompt: &quot;I want you to classify the sentiment of these sentences as positive, negative, or neutral. Here are some examples: &#39;I love this product!&#39; → Positive &#39;This is the worst day ever.&#39; → Negative &#39;The weather is okay today.&#39; → Neutral Now classify: &#39;The movie was pretty good.&#39;&quot; Output: Positive   2. Zero-shot Learning Perform a task without prior examples. Prompt: &quot;Translate the following sentence from English to Spanish without any examples: &#39;The cat sleeps on the windowsill.&#39;&quot; Output: &quot;El gato duerme en el alféizar de la ventana.&quot;   3. Chain of Thought (CoT) Break down a problem into logical steps. Prompt: &quot;Solve this problem step-by-step: A store sells apples for $0.50 each and oranges for $0.75 each. If I buy 3 apples and 2 oranges, how much do I spend? Please show your reasoning.&quot; Output: Let’s solve this step-by-step: Cost of apples = 3 apples × $0.50 per apple = $1.50 Cost of oranges = 2 oranges × $0.75 per orange = $1.50 Total cost = Cost of apples + Cost of oranges = $1.50 + $1.50 = $3.00   4. Role-playing Assign the model a specific persona. Prompt: &quot;Act as a pirate and tell me how ye’d find treasure on a deserted island.&quot; Output: &quot;Arr, matey! First, I’d hoist me trusty spyglass and scour the horizon fer any glint o’ gold...&quot;   5. Output Formatting Specify the desired structure of the response. Prompt: &quot;List three benefits of drinking water in JSON format.&quot; Output: { &quot;benefits&quot;: [ &quot;Improves hydration and energy levels&quot;, &quot;Supports digestion and metabolism&quot;, &quot;Helps maintain healthy skin&quot; ] }   Structured Outputs in OpenAI OpenAI’s Structured Outputs ensure responses adhere to predefined JSON schemas, making it invaluable for applications requiring reliable formatting.  Example 1: Solving a Math Problem from pydantic import BaseModel from openai import OpenAI  client = OpenAI(api_key=&quot;your-api-key&quot;)  class Step(BaseModel): 	explanation: str 	output: str  class MathSolution(BaseModel): 	steps: list[Step] 	final_answer: str  response = client.beta.chat.completions.parse( 	model=&quot;gpt-4o-2024-08-06&quot;, 	messages=[     	{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a math tutor. Provide a step-by-step solution.&quot;},     	{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Solve 2x + 3 = 7&quot;} 	], 	response_format=MathSolution )  solution = response.choices[0].message.parsed for step in solution.steps: 	print(f&quot;Step: {step.explanation} -&gt; {step.output}&quot;) print(f&quot;Final Answer: {solution.final_answer}&quot;)   Example 2: Extracting Event Details from pydantic import BaseModel from openai import OpenAI  client = OpenAI(api_key=&quot;your-api-key&quot;)  class Event(BaseModel): 	name: str 	date: str 	participants: list[str]  response = client.beta.chat.completions.parse( 	model=&quot;gpt-4o-2024-08-06&quot;, 	messages=[     	{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;Extract event details from the text.&quot;},     	{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Alice and Bob are attending a meeting on March 10.&quot;} 	], 	response_format=Event )  event = response.choices[0].message.parsed print(f&quot;Event: {event.name}, Date: {event.date}, Participants: {&#39;, &#39;.join(event.participants)}&quot;)   Data Retrieval: Embedding Models and Databases Data retrieval is crucial for applications like semantic search and recommendation systems. Embedding models transform data into numerical vectors, and embedding databases store and retrieve these vectors efficiently.  Top Embedding Models (March 2025) Open-Source    NV-Embed-v2 (NVIDIA): Top MTEB score, ideal for RAG systems.   BGE-M3 (BAAI): Supports 100+ languages, handles long-context data.   E5-Mistral-7B-Instruct (Microsoft): Multilingual, high semantic understanding.   Stella (400M and 1.5B): Cost-effective, commercial use allowed.   Closed-Source    OpenAI text-embedding-3-large: Robust semantic understanding, API access.   Voyage-3-large (Voyage AI): High retrieval relevance, API access.   Cohere embed-english-v3.0: Strong for asymmetric semantic search, API access.   Best Embedding Databases    Weaviate: Open-source, robust semantic search.   Pinecone: Managed, real-time similarity search.   ChromaDB: Lightweight, integrates with Python AI stacks.   PGVector: PostgreSQL extension, hybrid data support.   Vespa: Full-featured, advanced retrieval and ranking.   Choosing the Right Tools    Research/Experimentation: NV-Embed-v2 or BGE-M3 with ChromaDB or Weaviate.   Commercial Applications: Stella or Voyage-3-large with Pinecone or Vespa.   Budget-Conscious: PGVector with BGE-M3 or Stella.   Multilingual Needs: BGE-M3 or E5-Mistral-7B with Weaviate.   Practical Tips    Test on Your Data: Evaluate models on your dataset.   Balance Cost and Performance: Open-source alternatives can match closed-source models.   Scalability Matters: Choose a database that grows with your data volume.   Data retrieval is transforming how we interact with information. Whether you opt for NV-Embed-v2, OpenAI text-embedding-3-large, or a robust database like Weaviate or Pinecone, the tools available in March 2025 empower developers to build smarter, more responsive AI systems.">
 
 
 
@@ -18,25 +18,25 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="KBG Blog">
 <meta property="og:title" content="Tricks For Llm Based App Development">
-<meta property="og:url" content="http://localhost:4000/blog/2025/03/06/Tricks-For-LLM-Based-App-Development/">
+<meta property="og:url" content="http://0.0.0.0:4000/2025/03/06/Tricks-For-LLM-Based-App-Development/">
 
 
-  <meta property="og:description" content="Want to develop a GenAI application? Here are a few techniques to help you out.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2025-03-06T00:00:00+05:30">
+  <meta property="og:description" content="Want to develop a GenAI application? Here are a few techniques to help you out.  Prompt Engineering Techniques Prompt engineering is the art of designing inputs to effectively communicate with AI models. Here are five key techniques:  1. Few-shot Learning Provide a few examples to demonstrate the task. Prompt: &quot;I want you to classify the sentiment of these sentences as positive, negative, or neutral. Here are some examples: &#39;I love this product!&#39; → Positive &#39;This is the worst day ever.&#39; → Negative &#39;The weather is okay today.&#39; → Neutral Now classify: &#39;The movie was pretty good.&#39;&quot; Output: Positive   2. Zero-shot Learning Perform a task without prior examples. Prompt: &quot;Translate the following sentence from English to Spanish without any examples: &#39;The cat sleeps on the windowsill.&#39;&quot; Output: &quot;El gato duerme en el alféizar de la ventana.&quot;   3. Chain of Thought (CoT) Break down a problem into logical steps. Prompt: &quot;Solve this problem step-by-step: A store sells apples for $0.50 each and oranges for $0.75 each. If I buy 3 apples and 2 oranges, how much do I spend? Please show your reasoning.&quot; Output: Let’s solve this step-by-step: Cost of apples = 3 apples × $0.50 per apple = $1.50 Cost of oranges = 2 oranges × $0.75 per orange = $1.50 Total cost = Cost of apples + Cost of oranges = $1.50 + $1.50 = $3.00   4. Role-playing Assign the model a specific persona. Prompt: &quot;Act as a pirate and tell me how ye’d find treasure on a deserted island.&quot; Output: &quot;Arr, matey! First, I’d hoist me trusty spyglass and scour the horizon fer any glint o’ gold...&quot;   5. Output Formatting Specify the desired structure of the response. Prompt: &quot;List three benefits of drinking water in JSON format.&quot; Output: { &quot;benefits&quot;: [ &quot;Improves hydration and energy levels&quot;, &quot;Supports digestion and metabolism&quot;, &quot;Helps maintain healthy skin&quot; ] }   Structured Outputs in OpenAI OpenAI’s Structured Outputs ensure responses adhere to predefined JSON schemas, making it invaluable for applications requiring reliable formatting.  Example 1: Solving a Math Problem from pydantic import BaseModel from openai import OpenAI  client = OpenAI(api_key=&quot;your-api-key&quot;)  class Step(BaseModel): 	explanation: str 	output: str  class MathSolution(BaseModel): 	steps: list[Step] 	final_answer: str  response = client.beta.chat.completions.parse( 	model=&quot;gpt-4o-2024-08-06&quot;, 	messages=[     	{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a math tutor. Provide a step-by-step solution.&quot;},     	{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Solve 2x + 3 = 7&quot;} 	], 	response_format=MathSolution )  solution = response.choices[0].message.parsed for step in solution.steps: 	print(f&quot;Step: {step.explanation} -&gt; {step.output}&quot;) print(f&quot;Final Answer: {solution.final_answer}&quot;)   Example 2: Extracting Event Details from pydantic import BaseModel from openai import OpenAI  client = OpenAI(api_key=&quot;your-api-key&quot;)  class Event(BaseModel): 	name: str 	date: str 	participants: list[str]  response = client.beta.chat.completions.parse( 	model=&quot;gpt-4o-2024-08-06&quot;, 	messages=[     	{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;Extract event details from the text.&quot;},     	{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Alice and Bob are attending a meeting on March 10.&quot;} 	], 	response_format=Event )  event = response.choices[0].message.parsed print(f&quot;Event: {event.name}, Date: {event.date}, Participants: {&#39;, &#39;.join(event.participants)}&quot;)   Data Retrieval: Embedding Models and Databases Data retrieval is crucial for applications like semantic search and recommendation systems. Embedding models transform data into numerical vectors, and embedding databases store and retrieve these vectors efficiently.  Top Embedding Models (March 2025) Open-Source    NV-Embed-v2 (NVIDIA): Top MTEB score, ideal for RAG systems.   BGE-M3 (BAAI): Supports 100+ languages, handles long-context data.   E5-Mistral-7B-Instruct (Microsoft): Multilingual, high semantic understanding.   Stella (400M and 1.5B): Cost-effective, commercial use allowed.   Closed-Source    OpenAI text-embedding-3-large: Robust semantic understanding, API access.   Voyage-3-large (Voyage AI): High retrieval relevance, API access.   Cohere embed-english-v3.0: Strong for asymmetric semantic search, API access.   Best Embedding Databases    Weaviate: Open-source, robust semantic search.   Pinecone: Managed, real-time similarity search.   ChromaDB: Lightweight, integrates with Python AI stacks.   PGVector: PostgreSQL extension, hybrid data support.   Vespa: Full-featured, advanced retrieval and ranking.   Choosing the Right Tools    Research/Experimentation: NV-Embed-v2 or BGE-M3 with ChromaDB or Weaviate.   Commercial Applications: Stella or Voyage-3-large with Pinecone or Vespa.   Budget-Conscious: PGVector with BGE-M3 or Stella.   Multilingual Needs: BGE-M3 or E5-Mistral-7B with Weaviate.   Practical Tips    Test on Your Data: Evaluate models on your dataset.   Balance Cost and Performance: Open-source alternatives can match closed-source models.   Scalability Matters: Choose a database that grows with your data volume.   Data retrieval is transforming how we interact with information. Whether you opt for NV-Embed-v2, OpenAI text-embedding-3-large, or a robust database like Weaviate or Pinecone, the tools available in March 2025 empower developers to build smarter, more responsive AI systems.">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/blog/2025/03/06/Tricks-For-LLM-Based-App-Development/">
+
+  <meta property="article:published_time" content="2025-03-06T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/2025/03/06/Tricks-For-LLM-Based-App-Development/">
 
 
 
@@ -47,7 +47,7 @@
     
       "@type": "Person",
       "name": null,
-      "url": "http://localhost:4000/blog/"
+      "url": "http://0.0.0.0:4000/"
     
   }
 </script>
@@ -62,7 +62,7 @@
 
 
 
-  <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="KBG Blog Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KBG Blog Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -73,7 +73,7 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/blog/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
@@ -107,7 +107,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-        <a class="site-title" href="/blog/">
+        <a class="site-title" href="/">
           KBG Blog
           
         </a>
@@ -131,8 +131,8 @@
   <div class="centered-container" style="max-width: 800px; margin: 0 auto;">
     <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
       <meta itemprop="headline" content="Tricks For Llm Based App Development">
-      <meta itemprop="description" content="Want to develop a GenAI application? Here are a few techniques to help you out.">
-      <meta itemprop="datePublished" content="2025-03-06T00:00:00+05:30">
+      <meta itemprop="description" content="Want to develop a GenAI application? Here are a few techniques to help you out.Prompt Engineering TechniquesPrompt engineering is the art of designing inputs to effectively communicate with AI models. Here are five key techniques:1. Few-shot LearningProvide a few examples to demonstrate the task.Prompt:&quot;I want you to classify the sentiment of these sentences as positive, negative, or neutral. Here are some examples:&#39;I love this product!&#39; → Positive&#39;This is the worst day ever.&#39; → Negative&#39;The weather is okay today.&#39; → NeutralNow classify: &#39;The movie was pretty good.&#39;&quot;Output:Positive2. Zero-shot LearningPerform a task without prior examples.Prompt:&quot;Translate the following sentence from English to Spanish without any examples: &#39;The cat sleeps on the windowsill.&#39;&quot;Output:&quot;El gato duerme en el alféizar de la ventana.&quot;3. Chain of Thought (CoT)Break down a problem into logical steps.Prompt:&quot;Solve this problem step-by-step: A store sells apples for $0.50 each and oranges for $0.75 each. If I buy 3 apples and 2 oranges, how much do I spend? Please show your reasoning.&quot;Output:Let’s solve this step-by-step:Cost of apples = 3 apples × $0.50 per apple = $1.50Cost of oranges = 2 oranges × $0.75 per orange = $1.50Total cost = Cost of apples + Cost of oranges = $1.50 + $1.50 = $3.004. Role-playingAssign the model a specific persona.Prompt:&quot;Act as a pirate and tell me how ye’d find treasure on a deserted island.&quot;Output:&quot;Arr, matey! First, I’d hoist me trusty spyglass and scour the horizon fer any glint o’ gold...&quot;5. Output FormattingSpecify the desired structure of the response.Prompt:&quot;List three benefits of drinking water in JSON format.&quot;Output:{ &quot;benefits&quot;: [ &quot;Improves hydration and energy levels&quot;, &quot;Supports digestion and metabolism&quot;, &quot;Helps maintain healthy skin&quot; ] }Structured Outputs in OpenAIOpenAI’s Structured Outputs ensure responses adhere to predefined JSON schemas, making it invaluable for applications requiring reliable formatting.Example 1: Solving a Math Problemfrom pydantic import BaseModelfrom openai import OpenAIclient = OpenAI(api_key=&quot;your-api-key&quot;)class Step(BaseModel):	explanation: str	output: strclass MathSolution(BaseModel):	steps: list[Step]	final_answer: strresponse = client.beta.chat.completions.parse(	model=&quot;gpt-4o-2024-08-06&quot;,	messages=[    	{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a math tutor. Provide a step-by-step solution.&quot;},    	{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Solve 2x + 3 = 7&quot;}	],	response_format=MathSolution)solution = response.choices[0].message.parsedfor step in solution.steps:	print(f&quot;Step: {step.explanation} -&gt; {step.output}&quot;)print(f&quot;Final Answer: {solution.final_answer}&quot;)Example 2: Extracting Event Detailsfrom pydantic import BaseModelfrom openai import OpenAIclient = OpenAI(api_key=&quot;your-api-key&quot;)class Event(BaseModel):	name: str	date: str	participants: list[str]response = client.beta.chat.completions.parse(	model=&quot;gpt-4o-2024-08-06&quot;,	messages=[    	{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;Extract event details from the text.&quot;},    	{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Alice and Bob are attending a meeting on March 10.&quot;}	],	response_format=Event)event = response.choices[0].message.parsedprint(f&quot;Event: {event.name}, Date: {event.date}, Participants: {&#39;, &#39;.join(event.participants)}&quot;)Data Retrieval: Embedding Models and DatabasesData retrieval is crucial for applications like semantic search and recommendation systems. Embedding models transform data into numerical vectors, and embedding databases store and retrieve these vectors efficiently.Top Embedding Models (March 2025)Open-Source  NV-Embed-v2 (NVIDIA): Top MTEB score, ideal for RAG systems.  BGE-M3 (BAAI): Supports 100+ languages, handles long-context data.  E5-Mistral-7B-Instruct (Microsoft): Multilingual, high semantic understanding.  Stella (400M and 1.5B): Cost-effective, commercial use allowed.Closed-Source  OpenAI text-embedding-3-large: Robust semantic understanding, API access.  Voyage-3-large (Voyage AI): High retrieval relevance, API access.  Cohere embed-english-v3.0: Strong for asymmetric semantic search, API access.Best Embedding Databases  Weaviate: Open-source, robust semantic search.  Pinecone: Managed, real-time similarity search.  ChromaDB: Lightweight, integrates with Python AI stacks.  PGVector: PostgreSQL extension, hybrid data support.  Vespa: Full-featured, advanced retrieval and ranking.Choosing the Right Tools  Research/Experimentation: NV-Embed-v2 or BGE-M3 with ChromaDB or Weaviate.  Commercial Applications: Stella or Voyage-3-large with Pinecone or Vespa.  Budget-Conscious: PGVector with BGE-M3 or Stella.  Multilingual Needs: BGE-M3 or E5-Mistral-7B with Weaviate.Practical Tips  Test on Your Data: Evaluate models on your dataset.  Balance Cost and Performance: Open-source alternatives can match closed-source models.  Scalability Matters: Choose a database that grows with your data volume.Data retrieval is transforming how we interact with information. Whether you opt for NV-Embed-v2, OpenAI text-embedding-3-large, or a robust database like Weaviate or Pinecone, the tools available in March 2025 empower developers to build smarter, more responsive AI systems.">
+      <meta itemprop="datePublished" content="2025-03-06T00:00:00-06:00">
       
 
       <div class="page__inner-wrap">
@@ -148,7 +148,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2025-03-06T00:00:00+05:30">March 6, 2025</time>
+        <time datetime="2025-03-06T00:00:00-06:00">March 6, 2025</time>
       </span>
     
 
@@ -348,7 +348,7 @@ Output:
 
           
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-06T00:00:00+05:30">March 6, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-06T00:00:00-06:00">March 6, 2025</time></p>
 
 
         </footer>
@@ -356,22 +356,22 @@ Output:
         <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Tricks+For+Llm+Based+App+Development%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Tricks+For+Llm+Based+App+Development%20http%3A%2F%2F0.0.0.0%3A4000%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2F2025%2F03%2F06%2FTricks-For-LLM-Based-App-Development%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
         
   <nav class="pagination">
     
-      <a href="/blog/2025/02/28/Introduction-to-rag/" class="pagination--pager" title="Introduction To Rag
+      <a href="/2025/02/28/Introduction-to-rag/" class="pagination--pager" title="Introduction To Rag
 ">Previous</a>
     
     
-      <a href="/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" class="pagination--pager" title="Understanding Llms Reasoning Paths
+      <a href="/2025/03/19/Understanding-LLMs-Reasoning-Paths/" class="pagination--pager" title="Understanding Llms Reasoning Paths
 ">Next</a>
     
   </nav>
@@ -395,7 +395,7 @@ Output:
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/blog/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines/" rel="permalink">Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines
+        <a href="/2025/06/05/The-Urgent-Quest-for-AI-Safety/" rel="permalink">The Urgent Quest For Ai Safety
 </a>
       
     </h2>
@@ -407,7 +407,59 @@ Output:
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2025-03-26T00:00:00+05:30">March 26, 2025</time>
+        <time datetime="2025-06-05T00:00:00-05:00">June 5, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+🤖 The Urgent Quest for AI Safety: Why It Matters and What We Must Do
+
+
+An illustration representing the complexity and urgency of AI safety.
+
+Artificial Int...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/26/Harnessing-AI-Locally-A-Deep-Dive-into-Running-LLMs-with-Ollama-on-Low-Resource-Machines/" rel="permalink">Harnessing Ai Locally A Deep Dive Into Running Llms With Ollama On Low Resource Machines
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-03-26T00:00:00-05:00">March 26, 2025</time>
       </span>
     
 
@@ -432,7 +484,8 @@ Output:
 
 
 
-</p>
+
+Ollama is a tool that lets you run LLMs on your own computer, which is great for keeping your data private and avoiding cloud costs. It’s especially he...</p>
   </article>
 </div>
 
@@ -446,7 +499,7 @@ Output:
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/blog/2025/03/19/Understanding-LLMs-Reasoning-Paths/" rel="permalink">Understanding Llms Reasoning Paths
+        <a href="/2025/03/19/Understanding-LLMs-Reasoning-Paths/" rel="permalink">Understanding Llms Reasoning Paths
 </a>
       
     </h2>
@@ -458,7 +511,7 @@ Output:
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2025-03-19T00:00:00+05:30">March 19, 2025</time>
+        <time datetime="2025-03-19T00:00:00-05:00">March 19, 2025</time>
       </span>
     
 
@@ -497,7 +550,7 @@ Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/blog/2025/02/28/Introduction-to-rag/" rel="permalink">Introduction To Rag
+        <a href="/2025/02/28/Introduction-to-rag/" rel="permalink">Introduction To Rag
 </a>
       
     </h2>
@@ -509,7 +562,7 @@ Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
+        <time datetime="2025-02-28T00:00:00-06:00">February 28, 2025</time>
       </span>
     
 
@@ -537,61 +590,7 @@ Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities
 
 Recent Developments in RAG
 
-</p>
-  </article>
-</div>
-
-          
-            
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/blog/2025/02/28/AI-Models-comparison/" rel="permalink">Ai Models Comparison
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2025-02-28T00:00:00+05:30">February 28, 2025</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-
-
-
-Advanced AI Models: A Comparison
-Exploring Claude, Grok, DeepSeek, and OpenAI
-
-</p>
+The field of RAG has seen rapid progress in recent years, driven by innovations in its components, training methods, and sc...</p>
   </article>
 </div>
 
@@ -617,7 +616,7 @@ Exploring Claude, Grok, DeepSeek, and OpenAI
     
 
     
-      <li><a href="/blog/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>
@@ -628,7 +627,7 @@ Exploring Claude, Grok, DeepSeek, and OpenAI
     </div>
 
     
-  <script src="/blog/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js"></script>
 
 
 
